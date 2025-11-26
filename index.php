@@ -20,13 +20,16 @@ include 'config.php';
     </tr>
 
 <?php
-$sql = "SELECT id, name, email FROM users"; // Only select the needed columns
+// Use 'admin' column from your table and alias it as 'name'
+// Use 'admin' column from your table and alias it as 'name'
+$sql = "SELECT id, admin AS name, email FROM users";
 $result = $conn->query($sql);
+
 
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $id = $row['id'];
-        $name = $row['name'];
+        $name = $row['name'];  // maps to 'admin' column
         $email = $row['email'];
 
         echo "<tr>
@@ -48,3 +51,4 @@ if ($result && $result->num_rows > 0) {
 
 </body>
 </html>
+
