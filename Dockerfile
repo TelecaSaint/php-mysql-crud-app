@@ -1,10 +1,13 @@
-# Use official PHP with Apache image
+# Use official PHP with Apache
 FROM php:8.2-apache
 
-# Copy your app files to the web root
+# Install mysqli extension
+RUN docker-php-ext-install mysqli
+
+# Copy your app files to Apache web root
 COPY . /var/www/html/
 
-# Expose the default HTTP port
+# Expose HTTP port
 EXPOSE 10000
 
 # Start Apache in foreground
