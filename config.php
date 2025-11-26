@@ -1,12 +1,12 @@
 <?php
 // Get database credentials from Render environment variables
-$host = getenv('DB_HOST');    // e.g., mysql-34b1fc3e-queenb70-0513.i.aivencloud.com
-$db   = getenv('DB_NAME');    // e.g., defaultdb
-$user = getenv('DB_USER');    // e.g., avnadmin
-$pass = getenv('DB_PASS');    // your password
-$port = getenv('DB_PORT');    // e.g., 15515
+$host = getenv('DB_HOST');
+$db   = getenv('DB_NAME');
+$user = getenv('DB_USER');
+$pass = getenv('DB_PASS');
+$port = getenv('DB_PORT');
 
-$ssl_ca = __DIR__ . '/sql/ca.pem';
+$ssl_ca = __DIR__ . '/sql/ca.pem'; // Make sure ca.pem is in sql/ folder
 
 // Initialize MySQLi and set SSL
 $conn = mysqli_init();
